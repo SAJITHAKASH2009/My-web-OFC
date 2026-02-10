@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebTool Pro</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="min-h-screen flex flex-col items-center p-6">
+
+  <header class="text-center mb-12">
+    <h1 class="text-4xl font-bold text-blue-400 mb-2">WebTool Pro</h1>
+    <p class="text-gray-400">Fast, Simple, and Free Tools</p>
+  </header>
+
+  <main class="w-full max-w-4xl grid md:grid-cols-2 gap-8">
+
+    <!-- YouTube Tool -->
+    <section class="glass p-6 rounded-2xl shadow-xl">
+      <div class="flex items-center mb-4">
+        <i class="fab fa-youtube text-red-500 text-3xl mr-3"></i>
+        <h2 class="text-xl font-semibold">YouTube Downloader</h2>
+      </div>
+
+      <p class="text-sm text-gray-400 mb-4">Convert videos to MP3 or MP4 format.</p>
+
+      <input id="yt-url" type="text"
+        placeholder="Paste YouTube link here..."
+        class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 mb-4">
+
+      <div class="flex gap-2 mb-4">
+        <select id="yt-format"
+          class="bg-gray-800 p-3 rounded-lg flex-1 border border-gray-700">
+          <option value="mp3">MP3</option>
+          <option value="mp4">MP4</option>
+        </select>
+
+        <button onclick="downloadYoutube()"
+          class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-bold">
+          Convert
+        </button>
+      </div>
+
+      <div id="yt-status" class="text-sm text-center"></div>
+    </section>
+
+    <!-- WhatsApp Tool -->
+    <section class="glass p-6 rounded-2xl shadow-xl">
+      <div class="flex items-center mb-4">
+        <i class="fab fa-whatsapp text-green-500 text-3xl mr-3"></i>
+        <h2 class="text-xl font-semibold">WhatsApp DP Saver</h2>
+      </div>
+
+      <p class="text-sm text-gray-400 mb-4">Download profile picture.</p>
+
+      <input id="wa-number" type="text"
+        placeholder="Enter phone number"
+        class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 mb-4">
+
+      <button onclick="fetchWhatsappDP()"
+        class="w-full bg-green-600 hover:bg-green-700 py-3 rounded-lg font-bold">
+        Fetch Image
+      </button>
+
+      <div id="wa-result" class="mt-4 flex flex-col items-center hidden">
+        <img id="wa-img" class="w-32 h-32 rounded-full mb-2">
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
